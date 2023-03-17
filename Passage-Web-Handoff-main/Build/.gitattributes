@@ -1,2 +1,0 @@
-largefile.png filter=lfs diff=lfs merge=lfs -text
-1703_1.data filter=lfs diff=lfs merge=lfs -text
