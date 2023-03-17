@@ -2,10 +2,10 @@ import { UnityProvider } from 'contexts/UnityProvider';
 import Play from '../Play';
 
 const unityConfig = {
-  loaderUrl: 'Build/public.loader.js',
-  dataUrl: 'Build/public.data',
-  frameworkUrl: 'Build/public.framework.js',
-  codeUrl: 'Build/public.wasm',
+  loaderUrl: 'https://hereandnow2.s3.ap-southeast-2.amazonaws.com/passagetest/public.loader.js',
+  dataUrl: 'https://hereandnow2.s3.ap-southeast-2.amazonaws.com/passagetest/public.data',
+  frameworkUrl: 'https://hereandnow2.s3.ap-southeast-2.amazonaws.com/passagetest/public.framework.js',
+  codeUrl: 'https://hereandnow2.s3.ap-southeast-2.amazonaws.com/passagetest/public.wasm',
 };
 
 const Home = () => {
