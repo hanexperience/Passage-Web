@@ -62,7 +62,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
               defaultEventCallbacks.PAIR_SUCCESS(data);
           },
         },
-      });
+       },
+     });
 
       console.log('setWalletProvider', _wallet);
       tezos.setWalletProvider(_wallet);
