@@ -57,7 +57,9 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
             handler: defaultEventCallbacks.PAIR_INIT,
           },
           [BeaconEvent.PAIR_SUCCESS]: {
-            handler: (data) => console.log(data.publicKey),
+            handler: (data) => {
+              console.log(data.publicKey);
+              defaultEventCallbacks.PAIR_SUCCESS(data);
           },
         },
       });
