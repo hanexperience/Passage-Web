@@ -23,7 +23,7 @@ export const getEntryCoin = (address: string, tokenId: number = 3) => {
 };
 
 export const updateEntryCoinAmount = (address: string, amount: number) => {
-  const url = `${BASE_URL}/api/index/tokens/entrycoin`;
+  const url = `${BASE_URL}/api/index/entrycoin`;
   const payload = { address, amount };
   return axios
     .post(url, payload)
