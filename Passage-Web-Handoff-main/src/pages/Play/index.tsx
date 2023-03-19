@@ -88,7 +88,7 @@ const Play = () => {
           await indexer.updateEntryCoinAmount(address, entryCoinAmount - 1);
           sendMessage('GFT', 'MintComplete', entryCoinAmount - 1);
 
-          toast.success('You have minted successfully!');
+          toast.success('Mint Machine is loading');
         }
       }
     },
