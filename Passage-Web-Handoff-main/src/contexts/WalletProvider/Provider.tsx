@@ -43,12 +43,8 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     (async () => {
-      if (wallet) {
-        await wallet.clearActiveAccount();
-      }
-
       const _wallet = new BeaconWallet({
-        name: 'GFT',
+        name: "GFT",
         preferredNetwork: networkType,
         disableDefaultEvents: true, // Disable all events / UI. This also disables the pairing alert.
         eventHandlers: {
@@ -60,13 +56,22 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
             handler: (data) => {
               console.log(data.publicKey);
               defaultEventCallbacks.PAIR_SUCCESS(data);
+            },
           },
         },
-       },
-     });
+      });
 
-      console.log('setWalletProvider', _wallet);
+      console.log("setWalletProvider", _wallet);
       tezos.setWalletProvider(_wallet);
+      setWallet(_wallet);
+
+      try {
+        setAddress(await _wallet.getPKH());
+      } catch (_) {
+        // resync required
+      }
+    })();
+  }, [tezos, networkType]);
       setWallet(_wallet);
     })();
   }, [tezos, networkType]);
