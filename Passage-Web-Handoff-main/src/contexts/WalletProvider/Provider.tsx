@@ -72,9 +72,6 @@ export const WalletProvider: React.FC<{ children: ReactNode }> = ({
       }
     })();
   }, [tezos, networkType]);
-      setWallet(_wallet);
-    })();
-  }, [tezos, networkType]);
 
   const connectWallet = useCallback(async () => {
     if (!wallet) {
